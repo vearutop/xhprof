@@ -9,7 +9,7 @@ include_once dirname(__FILE__) . '/../xhprof_lib/utils/xhprof_lib.php';
 include_once dirname(__FILE__) . '/../xhprof_lib/utils/xhprof_runs.php';
 
 
-$_xhprof['savepost'] = false;
+$_xhprof['savepost'] = true;
 $_xhprof['display'] = true;
 $_xhprof['doprofile'] = true;
 $_xhprof['type'] = 1;

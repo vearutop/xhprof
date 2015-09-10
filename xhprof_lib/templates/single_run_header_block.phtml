@@ -118,30 +118,7 @@
    </tbody>
   </table>
  </div>
- <div class="box-fix-cr">
-   <table class="box-tables">
-     <thead>
-       <tr><th>Post</th><th>Results</th></tr>
-     </thead>
-    <tbody>
-  <?php
-  // echo '<pre>'.print_r($postArr, true).'</pre>';       
-    foreach($postArr as $key=>$value){
-        if (is_array($value))
-        {
-            $value = nl2br(str_replace('  ', '&nbsp;', print_r($value, true)));
-        }         
-        echo "<tr>";
-        echo "<td>" . $key . "</td><td>" . $value . "</td>";
-        echo "</tr>";
-     }
-     if(count($postArr) == 0)
-     {
-	echo "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>";
-     }
-  ?>
-    </tbody>
-   </table>
+ <div class="box-fix-cr"><h3>POST</h3><?php print_rc($postArr);?>
   </div>
   <div id="container"></div>
  </div>
