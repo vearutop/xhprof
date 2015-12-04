@@ -370,7 +370,7 @@ CREATE TABLE `details` (
   * @param mixed $xhprof_details
   * @return string
   */
-    public function save_run($xhprof_data, $type, $run_id = null, $xhprof_details = null) 
+    public function save_run($xhprof_data, $type, $run_id = null, $xhprof_details = null, $timestamp = null)
     {
         global $_xhprof;
 
@@ -449,7 +449,7 @@ CREATE TABLE `details` (
         $sql['c_url'] = $this->db->escape(_urlSimilartor($_SERVER['REQUEST_URI']));
         $sql['servername'] = $this->db->escape($sname);
         $sql['type']  = (int) (isset($xhprof_details['type']) ? $xhprof_details['type'] : 0);
-        $sql['timestamp'] = $this->db->escape($_SERVER['REQUEST_TIME']);
+        $sql['timestamp'] = $this->db->escape($timestamp === null ? $_SERVER['REQUEST_TIME'] : $timestamp);
 	$sql['server_id'] = $this->db->escape($_xhprof['servername']);
         $sql['aggregateCalls_include'] = getenv('xhprof_aggregateCalls_include') ? getenv('xhprof_aggregateCalls_include') : '';
 

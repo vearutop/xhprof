@@ -53,3 +53,9 @@ Import profiles to viewer.
 ```
 php /path/to/xhprof_html/import.php /path/to/profiles/ profiling-session-name
 ```
+
+Or send profiles to viewer with CURL.
+```
+curl -u username:password http://xhprof.host/report.php\?timestamp\=1449033575\&namespace\=TASKS\&url\=TASK1\&server=host01 --data-binary @"/path/to/xhprof.serialized"
+```
+You can omit `-u username:password` if you don't have basic auth enabled.
